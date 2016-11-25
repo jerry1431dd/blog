@@ -22,3 +22,4 @@ def contact(request):
     Render the "contact" page
     '''
     return render(request, 'main/contact.html')
+

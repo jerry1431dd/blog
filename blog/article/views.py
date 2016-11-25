@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
 from article.models import Article, Comment
+from article.forms import ArticleForm
 
 
 def article(request):
@@ -18,4 +20,7 @@ def article(request):
     return render(request, 'article/article.html', context)
 
 
-# Create your views here.
+def articleCreate(request):
+    template = 'article/articleCreate.html'
+    if request.method == 'GET':
+     return render(request, template, {'articleForm':ArticleForm()})
