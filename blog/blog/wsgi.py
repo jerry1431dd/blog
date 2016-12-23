@@ -13,8 +13,7 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 
-if 'DYNO' in os.environ:
-# Running on Heroku
+if 'DYNO' in os.environ:   # Running on Heroku
     from dj_static import Cling
     application = Cling(get_wsgi_application())
 else:
